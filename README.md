@@ -4,6 +4,8 @@
 
 Normalize Gravity Forms field values — existing entries and future submissions — from BEFORE/AFTER examples: the plugin detects the transformation for you.
 
+![Plugin Screenshot](https://github.com/guilamu/entry-normalizer-for-gravity-forms/blob/main/screenshot.png)
+
 ## Example-Based Detection
 
 - Show one or more BEFORE/AFTER examples (e.g. `roger` → `ROGER`) — no regular expressions to write
