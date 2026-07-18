@@ -85,9 +85,9 @@ The rule editor warns when the targeted field already has GF Auto Formatter form
 
 ## Changelog
 
-### 1.1.2 - 2026-07-18
+### 1.1.3 - 2026-07-18
 - New "Normalize" control in each supported field's Advanced tab (form editor): UPPER CASE, lower case, First letter upper case, First Letters Upper Case, or off, with a "More options…" link to the full Normalization tab
-- Fields with sub-fields (e.g. Name, Address) are normalized on every sub-field
+- Fields with multiple parts (e.g. Name, Address) show a "More options…" link only, since a single casing rarely fits every part — set them up per-part (or whole-field) from the Normalization tab
 - The quick control stays in sync with the Normalization tab: it creates a matching rule there, and editing or deleting that rule from the tab updates the control back to "off"
 - New "whole field" target option in the rule editor, for rules that should apply across every sub-field of a multi-input field
 - Applies to future submissions only; existing entries are unaffected until previewed/applied from the Normalization tab

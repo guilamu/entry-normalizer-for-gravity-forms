@@ -3,7 +3,7 @@
  * Plugin Name: Entry Normalizer for Gravity Forms
  * Plugin URI: https://github.com/guilamu/entry-normalizer-for-gravity-forms
  * Description: Normalize Gravity Forms fields (existing entries and future submissions) from BEFORE/AFTER examples: the plugin automatically detects the matching transformation (uppercase, lowercase, capitalization, French phone numbers to +33, etc.).
- * Version: 1.1.2
+ * Version: 1.1.3
  * Author: Guilamu
  * Author URI: https://github.com/guilamu
  * Text Domain: entry-normalizer-for-gravity-forms
@@ -16,7 +16,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'GFEN_VERSION', '1.1.2' );
+define( 'GFEN_VERSION', '1.1.3' );
 define( 'GFEN_PLUGIN_FILE', __FILE__ );
 define( 'GFEN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'GFEN_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );

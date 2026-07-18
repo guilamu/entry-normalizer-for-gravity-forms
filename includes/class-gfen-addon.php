@@ -433,14 +433,31 @@ class GFEN_AddOn extends GFAddOn {
 				<?php esc_html_e( 'More options…', 'entry-normalizer-for-gravity-forms' ); ?>
 			</a>
 		</li>
+		<li class="gfen_normalize_setting_multi field_setting">
+			<label class="section_label">
+				<?php esc_html_e( 'Normalize', 'entry-normalizer-for-gravity-forms' ); ?>
+				<?php gform_tooltip( 'gfen_normalize_multi' ); ?>
+			</label>
+			<p class="gfen-normalize-multi-desc">
+				<?php esc_html_e( 'This field has multiple parts (e.g. first/last name). Set up normalization for it from the Normalization tab.', 'entry-normalizer-for-gravity-forms' ); ?>
+			</p>
+			<a href="#" class="gfen-more-options gfen-more-options-multi" target="_blank" rel="noopener">
+				<?php esc_html_e( 'More options…', 'entry-normalizer-for-gravity-forms' ); ?>
+			</a>
+		</li>
 		<?php
 	}
 
 	/**
-	 * Editor JavaScript: register the setting row for the supported field types,
-	 * load the saved value on field selection, persist changes as a field
-	 * property, and point "More options" at the Normalization tab (field
+	 * Editor JavaScript: register the setting rows for the supported field
+	 * types, load the saved value on field selection, persist changes as a
+	 * field property, and point "More options" at the Normalization tab (field
 	 * preselected).
+	 *
+	 * Multi-input fields (Name, Address…) get a link-only row instead of the
+	 * quick radios: applying one casing to prefix/first/middle/last/suffix
+	 * alike rarely makes sense, so those fields go straight to the full rule
+	 * editor (which offers per-sub-field or whole-field targeting).
 	 */
 	public function editor_inline_js() {
 		$form_id      = absint( rgget( 'id' ) );
@@ -451,20 +468,29 @@ class GFEN_AddOn extends GFAddOn {
 			var GFEN_TYPES = <?php echo wp_json_encode( array_values( $this->supported_types() ) ); ?>;
 			var GFEN_SETTINGS_URL = <?php echo wp_json_encode( $settings_url ); ?>;
 
-			// Show the "Normalize" row for each supported field type.
+			// Make both rows candidates for every supported field type; which one
+			// actually shows is decided at runtime below, from the loaded field's
+			// own inputs (not just its type — e.g. a Name field can be single-input
+			// in the "simple" format).
 			for ( var i = 0; i < GFEN_TYPES.length; i++ ) {
 				var t = GFEN_TYPES[ i ];
 				if ( typeof fieldSettings[ t ] !== 'undefined' ) {
-					fieldSettings[ t ] += ', .gfen_normalize_setting';
+					fieldSettings[ t ] += ', .gfen_normalize_setting, .gfen_normalize_setting_multi';
 				}
 			}
 
-			// Populate the radios (and the "More options" link) when a field is loaded.
+			// Show the matching row, populate the radios, and point "More options"
+			// at the Normalization tab with this field preselected.
 			$( document ).on( 'gform_load_field_settings', function ( e, field ) {
+				var isMulti = !!( field && Array.isArray( field.inputs ) && field.inputs.length > 0 );
+				$( '.gfen_normalize_setting' ).toggle( ! isMulti );
+				$( '.gfen_normalize_setting_multi' ).toggle( isMulti );
+
 				var val = ( field && field.gfenNormalize ) ? String( field.gfenNormalize ) : '';
 				$( 'input[name="gfen_normalize_option"]' ).each( function () {
 					this.checked = ( this.value === val );
 				} );
+
 				if ( field ) {
 					$( '.gfen-more-options' ).attr( 'href', GFEN_SETTINGS_URL + '&gfen_field=' + encodeURIComponent( field.id ) );
 				}
@@ -490,7 +516,9 @@ class GFEN_AddOn extends GFAddOn {
 	 */
 	public function editor_tooltips( $tooltips ) {
 		$tooltips['gfen_normalize'] = '<h6>' . esc_html__( 'Normalize', 'entry-normalizer-for-gravity-forms' ) . '</h6>'
-			. esc_html__( 'Automatically clean this field’s value on new submissions. For fields with sub-fields (Name, Address…), it applies to every sub-field. Existing entries are untouched — use “More options” to also fix them.', 'entry-normalizer-for-gravity-forms' );
+			. esc_html__( 'Automatically clean this field’s value on new submissions. Existing entries are untouched — use “More options” to also fix them.', 'entry-normalizer-for-gravity-forms' );
+		$tooltips['gfen_normalize_multi'] = '<h6>' . esc_html__( 'Normalize', 'entry-normalizer-for-gravity-forms' ) . '</h6>'
+			. esc_html__( 'This field has multiple parts, so no single casing fits them all here. Open the Normalization tab to set up per-part (or whole-field) rules.', 'entry-normalizer-for-gravity-forms' );
 		$tooltips['gfen_normalize_uppercase']     = esc_html__( 'Example: roger → ROGER', 'entry-normalizer-for-gravity-forms' );
 		$tooltips['gfen_normalize_lowercase']     = esc_html__( 'Example: ROGER → roger', 'entry-normalizer-for-gravity-forms' );
 		$tooltips['gfen_normalize_sentence_case'] = esc_html__( 'Example: roger → Roger', 'entry-normalizer-for-gravity-forms' );

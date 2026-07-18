@@ -514,35 +514,43 @@ msgstr ""
 msgid "off"
 msgstr ""
 
-#: includes/class-gfen-addon.php:408 includes/class-gfen-addon.php:480
+#: includes/class-gfen-addon.php:415 includes/class-gfen-addon.php:438 includes/class-gfen-addon.php:518 includes/class-gfen-addon.php:520
 msgid "Normalize"
 msgstr ""
 
-#: includes/class-gfen-addon.php:421
+#: includes/class-gfen-addon.php:433 includes/class-gfen-addon.php:445
 msgid "More options…"
 msgstr ""
 
-#: includes/class-gfen-addon.php:481
-msgid "Automatically clean this field’s value on new submissions. For fields with sub-fields (Name, Address…), it applies to every sub-field. Existing entries are untouched — use “More options” to also fix them."
+#: includes/class-gfen-addon.php:442
+msgid "This field has multiple parts (e.g. first/last name). Set up normalization for it from the Normalization tab."
 msgstr ""
 
-#: includes/class-gfen-addon.php:482
+#: includes/class-gfen-addon.php:519
+msgid "Automatically clean this field’s value on new submissions. Existing entries are untouched — use “More options” to also fix them."
+msgstr ""
+
+#: includes/class-gfen-addon.php:521
+msgid "This field has multiple parts, so no single casing fits them all here. Open the Normalization tab to set up per-part (or whole-field) rules."
+msgstr ""
+
+#: includes/class-gfen-addon.php:522
 msgid "Example: roger → ROGER"
 msgstr ""
 
-#: includes/class-gfen-addon.php:483
+#: includes/class-gfen-addon.php:523
 msgid "Example: ROGER → roger"
 msgstr ""
 
-#: includes/class-gfen-addon.php:484
+#: includes/class-gfen-addon.php:524
 msgid "Example: roger → Roger"
 msgstr ""
 
-#: includes/class-gfen-addon.php:485
+#: includes/class-gfen-addon.php:525
 msgid "Example: jean dupont → Jean Dupont"
 msgstr ""
 
-#: includes/class-gfen-addon.php:486
+#: includes/class-gfen-addon.php:526
 msgid "No automatic normalization for this field."
 msgstr ""
 

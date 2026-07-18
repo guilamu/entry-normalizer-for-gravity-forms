@@ -30,3 +30,10 @@
 	margin-top: 8px;
 	font-size: 13px;
 }
+
+/* Link-only row shown instead of the radios for multi-input fields (Name, Address…). */
+.gfen-normalize-multi-desc {
+	margin: 6px 0 0;
+	font-size: 12px;
+	color: #646970;
+}
