@@ -1,0 +1,488 @@
+# Copyright (C) 2026 Guillaume
+# This file is distributed under the AGPLv3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Entry Normalizer for Gravity Forms 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-17 18:46+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: entry-normalizer-for-gravity-forms\n"
+
+#: entry-normalizer-for-gravity-forms.php:40
+msgid "Entry Normalizer for Gravity Forms requires the Gravity Forms plugin to be active."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:20
+msgid "Remove leading/trailing spaces"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:21
+msgid "Collapse multiple spaces into one"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:22
+msgid "Remove all spaces"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:23
+msgid "ALL UPPERCASE"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:24
+msgid "all lowercase"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:25
+msgid "Capitalize the first letter only, rest lowercase"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:26
+msgid "Capitalize Each Word (Jean-Pierre Dupont)"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:27
+msgid "Remove accents"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:28
+msgid "Keep letters only"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:29
+msgid "Keep letters and digits only"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:29
+msgid "Keep digits only"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:30
+msgid "Remove digits"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:32
+msgid "Remove double quotes"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:33
+msgid "Strip HTML tags and code"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:34
+msgid "Remove links (URLs)"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:30
+msgid "French phone number to international format (+33612345678)"
+msgstr ""
+
+#: includes/class-gfen-transforms.php:43
+msgid "Removes spaces at the start and end."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:44
+msgid "Reduces runs of spaces to a single space."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:45
+msgid "Removes every space."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:46
+msgid "Converts the whole value to capital letters."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:47
+msgid "Converts the whole value to lowercase."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:48
+msgid "Capitalizes the first letter, lowercases the rest."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:49
+msgid "Uppercases the first letter of every word."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:50
+msgid "Replaces accented letters with plain ones."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:56
+msgid "Keeps only letters (removes digits, spaces and punctuation)."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:51
+msgid "Keeps only letters and digits."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:52
+msgid "Keeps only digits."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:53
+msgid "Removes every digit."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:54
+msgid "Removes straight, curly and « » double quotes (keeps apostrophes)."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:61
+msgid "Removes HTML tags, PHP code and script/style contents."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:62
+msgid "Removes URLs starting with http(s):// or www."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:53
+msgid "Formats French phone numbers as +33XXXXXXXXX."
+msgstr ""
+
+#: includes/class-gfen-transforms.php:230
+#: includes/class-gfen-addon.php:219
+msgid ", then "
+msgstr ""
+
+#: includes/class-gfen-addon.php:50
+msgid "Normalization"
+msgstr ""
+
+#: includes/class-gfen-addon.php:130
+msgid "Field Normalization"
+msgstr ""
+
+#: includes/class-gfen-addon.php:132
+msgid "Pick a field, provide one or more BEFORE / AFTER examples, and the plugin detects the matching transformation. Preview and apply the fix to existing entries, then enable the rule for future submissions."
+msgstr ""
+
+#: includes/class-gfen-addon.php:138
+msgid "Normalization rules"
+msgstr ""
+
+#: includes/class-gfen-addon.php:142
+#: includes/class-gfen-addon.php:228
+msgid "%s rule"
+msgstr ""
+
+#: includes/class-gfen-addon.php:143
+#: includes/class-gfen-addon.php:230
+msgid "%s rules"
+msgstr ""
+
+#: includes/class-gfen-addon.php:153
+msgid "Rules run in the order they appear."
+msgstr ""
+
+#: includes/class-gfen-addon.php:168
+msgid "No rules yet. Click “Add a modification” to get started."
+msgstr ""
+
+#: includes/class-gfen-addon.php:169
+msgid "Future submissions"
+msgstr ""
+
+#: includes/class-gfen-addon.php:171
+msgid "%s example(s)"
+msgstr ""
+
+#: includes/class-gfen-addon.php:172
+msgid "Preview"
+msgstr ""
+
+#: includes/class-gfen-addon.php:173
+msgid "Apply to existing entries"
+msgstr ""
+
+#: includes/class-gfen-addon.php:174
+msgid "Edit"
+msgstr ""
+
+#: includes/class-gfen-addon.php:175
+msgid "Delete"
+msgstr ""
+
+#: includes/class-gfen-addon.php:176
+msgid "Edit rule"
+msgstr ""
+
+#: includes/class-gfen-addon.php:177
+msgid "New modification"
+msgstr ""
+
+#: includes/class-gfen-addon.php:178
+msgid "Field to normalize:"
+msgstr ""
+
+#: includes/class-gfen-addon.php:179
+msgid "BEFORE / AFTER examples — the more you provide, the more accurate the detection:"
+msgstr ""
+
+#: includes/class-gfen-addon.php:180
+msgid "BEFORE (e.g. roger)"
+msgstr ""
+
+#: includes/class-gfen-addon.php:181
+msgid "AFTER (e.g. ROGER)"
+msgstr ""
+
+#: includes/class-gfen-addon.php:182
+msgid "Remove this example"
+msgstr ""
+
+#: includes/class-gfen-addon.php:183
+msgid "Add an example"
+msgstr ""
+
+#: includes/class-gfen-addon.php:184
+msgid "Detect transformation"
+msgstr ""
+
+#: includes/class-gfen-addon.php:185
+msgid "Detecting…"
+msgstr ""
+
+#: includes/class-gfen-addon.php:186
+msgid "Detected transformation(s) — choose the one to apply:"
+msgstr ""
+
+#: includes/class-gfen-addon.php:187
+msgid "No known transformation reproduces all your examples. Check the pairs (typos, spaces) or simplify them."
+msgstr ""
+
+#: includes/class-gfen-addon.php:188
+msgid "Error during detection."
+msgstr ""
+
+#: includes/class-gfen-addon.php:189
+msgid "Network error. Please try again."
+msgstr ""
+
+#: includes/class-gfen-addon.php:190
+msgid "Also apply automatically to future submissions"
+msgstr ""
+
+#: includes/class-gfen-addon.php:191
+msgid "Save rule"
+msgstr ""
+
+#: includes/class-gfen-addon.php:192
+msgid "Cancel"
+msgstr ""
+
+#: includes/class-gfen-addon.php:193
+msgid "Provide at least one example (the BEFORE column must not be empty)."
+msgstr ""
+
+#: includes/class-gfen-addon.php:194
+msgid "Run the detection and choose a transformation."
+msgstr ""
+
+#: includes/class-gfen-addon.php:195
+#: includes/class-gfen-addon.php:482
+msgid "Save failed."
+msgstr ""
+
+#: includes/class-gfen-addon.php:197
+msgid "Applying: %1$s / %2$s entries…"
+msgstr ""
+
+#: includes/class-gfen-addon.php:199
+msgid "Analyzing: %1$s / %2$s entries…"
+msgstr ""
+
+#: includes/class-gfen-addon.php:201
+msgid "%1$s entry(ies) modified out of %2$s analyzed."
+msgstr ""
+
+#: includes/class-gfen-addon.php:203
+msgid "%s write error(s)."
+msgstr ""
+
+#: includes/class-gfen-addon.php:205
+msgid "%1$s entry(ies) would be modified out of %2$s analyzed. Nothing has been written."
+msgstr ""
+
+#: includes/class-gfen-addon.php:207
+msgid "%s value(s) not recognized as a French phone number — left unchanged:"
+msgstr ""
+
+#: includes/class-gfen-addon.php:208
+msgid "Entry"
+msgstr ""
+
+#: includes/class-gfen-addon.php:209
+msgid "Before"
+msgstr ""
+
+#: includes/class-gfen-addon.php:210
+msgid "After (applied)"
+msgstr ""
+
+#: includes/class-gfen-addon.php:211
+msgid "After (proposed)"
+msgstr ""
+
+#: includes/class-gfen-addon.php:213
+msgid "… and %s more change(s) not shown."
+msgstr ""
+
+#: includes/class-gfen-addon.php:214
+msgid "This form has no compatible text field."
+msgstr ""
+
+#: includes/class-gfen-addon.php:215
+msgid "Permanently apply this transformation to the existing entries?\n\nTip: run a preview first. This action modifies stored data."
+msgstr ""
+
+#: includes/class-gfen-addon.php:216
+msgid "Delete this rule? (Entries already modified will not be restored.)"
+msgstr ""
+
+#: includes/class-gfen-addon.php:217
+msgid "Error during processing."
+msgstr ""
+
+#: includes/class-gfen-addon.php:221
+msgid "Deleted field (%s)"
+msgstr ""
+
+#: includes/class-gfen-addon.php:224
+msgid "Add a modification"
+msgstr ""
+
+#: includes/class-gfen-addon.php:225
+msgid "No normalization rules yet"
+msgstr ""
+
+#: includes/class-gfen-addon.php:226
+msgid "Create your first rule to automatically clean up field values — like forcing uppercase, trimming spaces, or fixing formats."
+msgstr ""
+
+#: includes/class-gfen-addon.php:231
+msgid "Not saved"
+msgstr ""
+
+#: includes/class-gfen-addon.php:232
+msgid "Field to normalize"
+msgstr ""
+
+#: includes/class-gfen-addon.php:233
+msgid "BEFORE / AFTER examples"
+msgstr ""
+
+#: includes/class-gfen-addon.php:234
+msgid "The more you provide, the more accurate the detection."
+msgstr ""
+
+#: includes/class-gfen-addon.php:235
+msgid "BEFORE"
+msgstr ""
+
+#: includes/class-gfen-addon.php:236
+msgid "AFTER"
+msgstr ""
+
+#: includes/class-gfen-addon.php:237
+msgid "e.g. roger"
+msgstr ""
+
+#: includes/class-gfen-addon.php:238
+msgid "e.g. ROGER"
+msgstr ""
+
+#: includes/class-gfen-addon.php:239
+msgid "Detect the transformation"
+msgstr ""
+
+#: includes/class-gfen-addon.php:240
+msgid "Exact match"
+msgstr ""
+
+#: includes/class-gfen-addon.php:241
+msgid "New entries will be normalized as they come in."
+msgstr ""
+
+#: includes/class-gfen-addon.php:242
+msgid "This won't touch existing entries until you preview & apply."
+msgstr ""
+
+#: includes/class-gfen-addon.php:306
+msgid "Warning: this field already has “GF Auto Formatter” formatting configured (in the field’s Advanced tab). On new submissions, both formattings will run in sequence and may contradict each other. The bulk apply, however, always matches the preview."
+msgstr ""
+
+#: includes/class-gfen-addon.php:354
+msgid "Insufficient permissions."
+msgstr ""
+
+#: includes/class-gfen-addon.php:359
+msgid "Form not found."
+msgstr ""
+
+#: includes/class-gfen-addon.php:395
+msgid "Provide at least one BEFORE/AFTER example."
+msgstr ""
+
+#: includes/class-gfen-addon.php:405
+msgid "All your examples are identical before and after: there is no transformation to detect."
+msgstr ""
+
+#: includes/class-gfen-addon.php:427
+msgid "Invalid rule."
+msgstr ""
+
+#: includes/class-gfen-addon.php:432
+msgid "Invalid target field."
+msgstr ""
+
+#: includes/class-gfen-addon.php:444
+msgid "No transformation selected."
+msgstr ""
+
+#: includes/class-gfen-addon.php:501
+msgid "Delete failed."
+msgstr ""
+
+#: includes/class-gfen-addon.php:522
+msgid "Rule not found."
+msgstr ""
+
+#: entry-normalizer-for-gravity-forms.php:86 entry-normalizer-for-gravity-forms.php:93
+msgid "Entry Normalizer for Gravity Forms"
+msgstr ""
+
+#: entry-normalizer-for-gravity-forms.php:85
+msgid "More information about Entry Normalizer for Gravity Forms"
+msgstr ""
+
+#: entry-normalizer-for-gravity-forms.php:87
+msgid "View details"
+msgstr ""
+
+#: entry-normalizer-for-gravity-forms.php:94
+msgid "🐛 Report a Bug"
+msgstr ""
+
+#: entry-normalizer-for-gravity-forms.php:99
+msgid "🐛 Report a Bug (install Bug Reporter)"
+msgstr ""
+
+#: includes/class-github-updater.php:641
+msgid "Requires Gravity Forms:"
+msgstr ""
+
+#: includes/class-github-updater.php:642
+msgid "%s or higher"
+msgstr ""
+
+#: includes/class-github-updater.php:877
+msgid "Unable to rename the update folder. Please retry or update manually."
+msgstr ""
+

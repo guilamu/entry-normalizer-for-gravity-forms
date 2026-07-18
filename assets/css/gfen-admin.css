@@ -1,0 +1,672 @@
+/* Entry Normalizer for Gravity Forms — "Field Normalization" settings tab.
+   Design implemented from the Claude Design mockup (WordPress admin palette). */
+
+.gfen-app {
+	--gfen-blue: #2271b1;
+	--gfen-blue-hover: #135e96;
+	--gfen-blue-bg: #f0f6fc;
+	--gfen-text: #1d2327;
+	--gfen-text-2: #2c3338;
+	--gfen-muted: #50575e;
+	--gfen-muted-2: #787c82;
+	--gfen-muted-3: #8c8f94;
+	--gfen-placeholder: #a7aaad;
+	--gfen-border: #dcdcde;
+	--gfen-border-strong: #c3c4c7;
+	--gfen-bg-soft: #f6f7f7;
+	--gfen-bg-softer: #fbfbfc;
+	--gfen-red: #b32d2e;
+
+	max-width: 820px;
+	color: var(--gfen-text);
+	-webkit-font-smoothing: antialiased;
+}
+
+.gfen-app * {
+	box-sizing: border-box;
+}
+
+/* Intro (sits at the top of the panel content, above the rules list) */
+.gfen-intro {
+	font-size: 13px;
+	line-height: 1.6;
+	color: var(--gfen-muted);
+	margin: 0 0 18px;
+	max-width: 660px;
+}
+
+/* Card — native Gravity Forms panel markup
+   (.gform-settings-panel / __header / __title / __content). We let GF own the
+   container, header and content chrome (border, radius, background, padding)
+   so it matches the rest of the GF settings. */
+
+/* Foot note at the bottom of the panel content */
+.gfen-foot-note {
+	font-size: 12px;
+	color: var(--gfen-muted-3);
+	margin: 16px 0 0;
+}
+
+/* Buttons */
+.gfen-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-family: inherit;
+	font-size: 13px;
+	line-height: 1;
+	font-weight: 400;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	padding: 9px 14px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.gfen-btn:focus-visible {
+	outline: 2px solid transparent;
+	box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--gfen-blue);
+}
+
+.gfen-btn[disabled] {
+	opacity: .55;
+	cursor: not-allowed;
+}
+
+.gfen-btn--primary {
+	color: #fff;
+	background: var(--gfen-blue);
+	border-color: var(--gfen-blue);
+}
+
+.gfen-btn--primary:hover:not([disabled]) {
+	background: var(--gfen-blue-hover);
+	border-color: var(--gfen-blue-hover);
+}
+
+.gfen-btn--secondary {
+	color: var(--gfen-blue);
+	background: #fff;
+	border-color: var(--gfen-blue);
+}
+
+.gfen-btn--secondary:hover:not([disabled]) {
+	background: var(--gfen-blue-bg);
+}
+
+.gfen-btn--ghost {
+	color: var(--gfen-text);
+	background: var(--gfen-bg-soft);
+	border-color: var(--gfen-muted-3);
+}
+
+.gfen-btn--ghost:hover:not([disabled]) {
+	background: #f0f0f1;
+	border-color: var(--gfen-muted-2);
+}
+
+.gfen-btn--small {
+	padding: 6px 11px;
+	font-size: 12px;
+}
+
+.gfen-btn--danger {
+	color: var(--gfen-red);
+	background: #fff;
+	border-color: #f0c4c5;
+}
+
+.gfen-btn--danger:hover:not([disabled]) {
+	background: #fcf0f1;
+}
+
+/* Empty state */
+.gfen-empty {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 14px;
+	padding: 34px 24px 30px;
+	border: 1px dashed var(--gfen-border-strong);
+	border-radius: 4px;
+	background: var(--gfen-bg-softer);
+}
+
+.gfen-empty__icon {
+	display: inline-flex;
+	width: 46px;
+	height: 46px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: var(--gfen-blue-bg);
+	color: var(--gfen-blue);
+}
+
+.gfen-empty__title {
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 4px;
+	color: var(--gfen-text);
+}
+
+.gfen-empty__desc {
+	font-size: 13px;
+	line-height: 1.6;
+	color: var(--gfen-muted);
+	margin: 0;
+	max-width: 380px;
+}
+
+/* Rules list */
+.gfen-rules-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.gfen-rule {
+	border: 1px solid var(--gfen-border);
+	border-radius: 4px;
+	background: #fff;
+	padding: 13px 14px;
+}
+
+.gfen-rule__top {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.gfen-rule__body {
+	flex: 1;
+	min-width: 0;
+}
+
+.gfen-rule__head {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 4px;
+}
+
+.gfen-rule__field {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--gfen-text);
+}
+
+.gfen-rule__chain {
+	font-size: 12px;
+	color: var(--gfen-blue);
+}
+
+.gfen-rule__meta {
+	font-size: 12px;
+	color: var(--gfen-muted-2);
+	margin-top: 2px;
+}
+
+.gfen-rule__actions {
+	flex: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	justify-content: flex-end;
+}
+
+.gfen-rule__progress {
+	margin-top: 10px;
+	font-size: 13px;
+	font-style: italic;
+	color: var(--gfen-muted);
+}
+
+.gfen-rule__result:not(:empty) {
+	margin-top: 8px;
+}
+
+.gfen-badge {
+	font-size: 11px;
+	font-weight: 600;
+	color: #007017;
+	background: #edfaef;
+	border: 1px solid #b8e6bf;
+	border-radius: 10px;
+	padding: 1px 8px;
+}
+
+/* Standalone add button (shown under the list when rules exist) */
+.gfen-add-wrap {
+	margin-top: 16px;
+}
+
+/* Add / edit form — also built on GF panel markup; scoped + reset like the
+   card above so the custom editor look survives over GF core styles. */
+.gfen-app .gfen-form__head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.gfen-form__dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: var(--gfen-blue);
+	flex: none;
+}
+
+.gfen-form__status {
+	margin-left: auto;
+	font-size: 12px;
+	color: var(--gfen-muted-2);
+}
+
+.gfen-app .gfen-form__body {
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+}
+
+.gfen-step {
+	display: flex;
+	gap: 12px;
+}
+
+.gfen-step__num {
+	flex: none;
+	display: inline-flex;
+	width: 22px;
+	height: 22px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background: var(--gfen-blue);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.gfen-step__body {
+	flex: 1;
+	min-width: 0;
+}
+
+.gfen-label {
+	display: block;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--gfen-text);
+	margin: 2px 0 6px;
+}
+
+.gfen-hint {
+	font-size: 12px;
+	color: var(--gfen-muted-2);
+	margin: 0 0 10px;
+}
+
+/* Select */
+.gfen-select-wrap {
+	position: relative;
+}
+
+.gfen-select {
+	width: 100%;
+	font-family: inherit;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--gfen-text-2);
+	padding: 7px 32px 7px 12px;
+	border: 1px solid var(--gfen-muted-3);
+	border-radius: 3px;
+	background: #fff;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+}
+
+.gfen-select-wrap__chevron {
+	position: absolute;
+	right: 11px;
+	top: 50%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	display: inline-flex;
+}
+
+/* Examples */
+.gfen-examples {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.gfen-ex {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.gfen-ex__field {
+	flex: 1;
+	position: relative;
+	min-width: 0;
+}
+
+.gfen-ex__badge {
+	position: absolute;
+	top: -7px;
+	left: 9px;
+	font-size: 9px;
+	font-weight: 700;
+	letter-spacing: .06em;
+	color: var(--gfen-placeholder);
+	background: #fff;
+	padding: 0 4px;
+}
+
+.gfen-ex__arrow {
+	flex: none;
+	display: inline-flex;
+}
+
+.gfen-ex__remove {
+	flex: none;
+	display: inline-flex;
+	width: 30px;
+	height: 30px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	background: transparent;
+	color: var(--gfen-red);
+	cursor: pointer;
+}
+
+.gfen-ex__remove:hover {
+	background: #fcf0f1;
+	border-color: #f0c4c5;
+}
+
+.gfen-input {
+	width: 100%;
+	font-family: inherit;
+	font-size: 14px;
+	color: var(--gfen-text-2);
+	padding: 8px 12px;
+	border: 1px solid var(--gfen-muted-3);
+	border-radius: 3px;
+	height: 38px;
+}
+
+.gfen-input::placeholder {
+	color: var(--gfen-placeholder);
+}
+
+.gfen-input:focus,
+.gfen-select:focus {
+	outline: 2px solid transparent;
+	border-color: var(--gfen-blue);
+	box-shadow: 0 0 0 1px var(--gfen-blue);
+}
+
+.gfen-add-example {
+	margin-top: 12px;
+}
+
+/* Detection results */
+.gfen-detect-results {
+	margin-top: 16px;
+}
+
+.gfen-detect-results__intro {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--gfen-muted);
+	margin: 0 0 8px;
+}
+
+.gfen-options {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.gfen-option {
+	display: flex;
+	align-items: center;
+	gap: 11px;
+	padding: 11px 13px;
+	border: 1px solid var(--gfen-border);
+	background: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.gfen-option.is-selected {
+	border-color: var(--gfen-blue);
+	background: var(--gfen-blue-bg);
+	box-shadow: 0 0 0 1px var(--gfen-blue);
+}
+
+.gfen-option__dot {
+	flex: none;
+	width: 17px;
+	height: 17px;
+	border-radius: 50%;
+	border: 1px solid var(--gfen-muted-3);
+	background: #fff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gfen-option.is-selected .gfen-option__dot {
+	border-color: var(--gfen-blue);
+}
+
+.gfen-option__dot::after {
+	content: "";
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: transparent;
+}
+
+.gfen-option.is-selected .gfen-option__dot::after {
+	background: var(--gfen-blue);
+}
+
+.gfen-option__text {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+}
+
+.gfen-option__label {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--gfen-text);
+}
+
+.gfen-option__desc {
+	font-size: 12px;
+	color: var(--gfen-muted-2);
+}
+
+.gfen-option__match {
+	margin-left: auto;
+	flex: none;
+	font-size: 11px;
+	font-weight: 600;
+	color: var(--gfen-blue);
+	background: var(--gfen-blue-bg);
+	border-radius: 10px;
+	padding: 2px 9px;
+}
+
+/* Future-submissions checkbox */
+.gfen-check {
+	margin-top: 14px;
+	display: flex;
+	align-items: flex-start;
+	gap: 9px;
+	cursor: pointer;
+}
+
+.gfen-check__box {
+	flex: none;
+	margin-top: 1px;
+	width: 17px;
+	height: 17px;
+	border-radius: 3px;
+	border: 1px solid var(--gfen-muted-3);
+	background: #fff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gfen-check.is-checked .gfen-check__box {
+	border-color: var(--gfen-blue);
+	background: var(--gfen-blue);
+}
+
+.gfen-check__check {
+	display: none;
+}
+
+.gfen-check.is-checked .gfen-check__check {
+	display: inline-flex;
+}
+
+.gfen-check__text {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.gfen-check__title {
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--gfen-text);
+}
+
+.gfen-check__desc {
+	font-size: 12px;
+	color: var(--gfen-muted-2);
+}
+
+/* Field-conflict warning (GF Auto Formatter) */
+.gfen-field-warning:not(:empty) {
+	margin-top: 10px;
+}
+
+/* Editor message area */
+.gfen-editor-msg:not(:empty) {
+	margin-top: 10px;
+}
+
+/* Form footer */
+.gfen-form__foot {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 13px 16px;
+	background: var(--gfen-bg-soft);
+	border-top: 1px solid var(--gfen-border);
+	flex-wrap: wrap;
+}
+
+.gfen-form__foot-note {
+	margin-left: auto;
+	font-size: 12px;
+	color: var(--gfen-muted-2);
+}
+
+/* While the add/edit form is open, hide the rules list, empty state and
+   standalone add button. */
+.gfen-app.is-editing .gfen-rules-list,
+.gfen-app.is-editing .gfen-empty,
+.gfen-app.is-editing .gfen-add-wrap {
+	display: none;
+}
+
+/* Notices (preview / apply results) */
+.gfen-notice {
+	border-left: 4px solid;
+	padding: 8px 12px;
+	margin: 10px 0;
+	background: #fff;
+	font-size: 13px;
+}
+
+.gfen-notice p {
+	margin: 0 0 4px;
+}
+
+.gfen-notice-success {
+	border-color: #00a32a;
+}
+
+.gfen-notice-error {
+	border-color: #d63638;
+}
+
+.gfen-notice-warning {
+	border-color: #dba617;
+}
+
+.gfen-notice-warning ul {
+	margin: 4px 0 4px 18px;
+	list-style: disc;
+}
+
+/* Preview / apply results table */
+.gfen-table {
+	margin-top: 10px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.gfen-table th,
+.gfen-table td {
+	font-size: 12px;
+	text-align: left;
+	padding: 6px 10px;
+	border: 1px solid var(--gfen-border);
+	word-break: break-word;
+}
+
+.gfen-table th {
+	background: var(--gfen-bg-soft);
+	font-weight: 600;
+}
+
+.gfen-more {
+	color: var(--gfen-muted-2);
+	font-style: italic;
+	font-size: 12px;
+}
+
+/* Responsive: stack example rows on narrow screens */
+@media screen and (max-width: 600px) {
+	.gfen-ex {
+		flex-wrap: wrap;
+	}
+
+	.gfen-ex__field {
+		flex-basis: 100%;
+	}
+
+	.gfen-ex__arrow {
+		transform: rotate(90deg);
+	}
+}
