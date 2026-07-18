@@ -68,6 +68,9 @@
 	}
 
 	function fieldLabel(id) {
+		if (D.fieldLabels && D.fieldLabels[String(id)]) {
+			return D.fieldLabels[String(id)];
+		}
 		var f = fieldById(id);
 		return f ? f.label : fmt(T.deletedField, id);
 	}
@@ -117,12 +120,18 @@
 
 	function ruleCardHtml(rule) {
 		var badge = rule.apply_future ? '<span class="gfen-badge">' + esc(T.futureBadge) + '</span>' : '';
+		// Rules created from a field's Advanced tab carry a marker badge, but can
+		// still be edited or deleted here like any other rule.
+		if (rule.quick) {
+			badge += '<span class="gfen-badge gfen-badge--quick">' + esc(T.quickBadge) + '</span>';
+		}
+		var meta = rule.examples.length ? '<div class="gfen-rule__meta">' + esc(fmt(T.examplesCount, rule.examples.length)) + '</div>' : '';
 		return '<div class="gfen-rule" data-rule-id="' + esc(rule.id) + '">'
 			+ '<div class="gfen-rule__top">'
 			+ '<div class="gfen-rule__body">'
 			+ '<div class="gfen-rule__head"><span class="gfen-rule__field">' + esc(fieldLabel(rule.field_id)) + '</span>' + badge + '</div>'
 			+ '<div class="gfen-rule__chain">' + esc(chainLabel(rule.chain)) + '</div>'
-			+ '<div class="gfen-rule__meta">' + esc(fmt(T.examplesCount, rule.examples.length)) + '</div>'
+			+ meta
 			+ '</div>'
 			+ '<div class="gfen-rule__actions">'
 			+ '<button type="button" class="gfen-btn gfen-btn--ghost gfen-btn--small gfen-js-preview">' + esc(T.preview) + '</button>'
@@ -565,6 +574,35 @@
 
 		bindEvents();
 		renderRules();
+		maybeOpenFromDeepLink();
 	});
+
+	// "More options…" from the field editor links here with ?gfen_field=<id>.
+	// Open a fresh rule editor with that field preselected.
+	function maybeOpenFromDeepLink() {
+		if (!D.fields.length || typeof window.URLSearchParams === 'undefined') {
+			return;
+		}
+		var requested = new URLSearchParams(window.location.search).get('gfen_field');
+		if (!requested) {
+			return;
+		}
+		// Exact input/field match, else the first sub-input of that field.
+		var match = null, i;
+		for (i = 0; i < D.fields.length; i++) {
+			if (D.fields[i].id === requested) { match = requested; break; }
+		}
+		if (!match) {
+			for (i = 0; i < D.fields.length; i++) {
+				if (D.fields[i].id.indexOf(requested + '.') === 0) { match = D.fields[i].id; break; }
+			}
+		}
+		if (!match) {
+			return;
+		}
+		openEditor(null);
+		$editor.find('#gfen-field').val(match).trigger('change');
+		scrollToEditor();
+	}
 
 })(jQuery);

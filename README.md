@@ -4,6 +4,8 @@
 
 Normalize Gravity Forms field values — existing entries and future submissions — from BEFORE/AFTER examples: the plugin detects the transformation for you.
 
+![Plugin Screenshot](https://github.com/guilamu/entry-normalizer-for-gravity-forms/blob/main/screenshot.png)
+
 ## Example-Based Detection
 
 - Show one or more BEFORE/AFTER examples (e.g. `roger` → `ROGER`) — no regular expressions to write
@@ -17,6 +19,7 @@ Normalize Gravity Forms field values — existing entries and future submissions
 - Bulk-apply the fix to existing entries in safe 50-entry batches, with before/after samples and a summary report
 - Optionally enable each rule for future submissions: new values are normalized as they come in
 - Rules are stored per form and run in the order they appear
+- Quick casing shortcut right in the field's Advanced tab (UPPER CASE, lower case, First letter upper case, First Letters Upper Case) for future submissions, with a link to the full rule editor for anything more advanced
 
 ## Key Features
 
@@ -81,6 +84,13 @@ The rule editor warns when the targeted field already has GF Auto Formatter form
 ```
 
 ## Changelog
+
+### 1.1.2 - 2026-07-18
+- New "Normalize" control in each supported field's Advanced tab (form editor): UPPER CASE, lower case, First letter upper case, First Letters Upper Case, or off, with a "More options…" link to the full Normalization tab
+- Fields with sub-fields (e.g. Name, Address) are normalized on every sub-field
+- The quick control stays in sync with the Normalization tab: it creates a matching rule there, and editing or deleting that rule from the tab updates the control back to "off"
+- New "whole field" target option in the rule editor, for rules that should apply across every sub-field of a multi-input field
+- Applies to future submissions only; existing entries are unaffected until previewed/applied from the Normalization tab
 
 ### 1.0.0 - 2026-07-18
 - Initial release

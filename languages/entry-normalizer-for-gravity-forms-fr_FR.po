@@ -3,10 +3,10 @@
 # This file is distributed under the AGPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Entry Normalizer for Gravity Forms 1.0.0\n"
+"Project-Id-Version: Entry Normalizer for Gravity Forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-17 18:46+0000\n"
-"PO-Revision-Date: 2026-07-18 14:56+0200\n"
+"PO-Revision-Date: 2026-07-18 18:45+0200\n"
 "Last-Translator: Guillaume\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -459,7 +459,8 @@ msgstr "Échec de la suppression."
 msgid "Rule not found."
 msgstr "Règle introuvable."
 
-#: entry-normalizer-for-gravity-forms.php:86 entry-normalizer-for-gravity-forms.php:93
+#: entry-normalizer-for-gravity-forms.php:86
+#: entry-normalizer-for-gravity-forms.php:93
 msgid "Entry Normalizer for Gravity Forms"
 msgstr "Entry Normalizer for Gravity Forms"
 
@@ -490,3 +491,63 @@ msgstr "%s ou supérieur"
 #: includes/class-github-updater.php:877
 msgid "Unable to rename the update folder. Please retry or update manually."
 msgstr "Impossible de renommer le dossier de mise à jour. Veuillez réessayer ou mettre à jour manuellement."
+
+#: includes/class-gfen-addon.php:182
+msgid "Field editor"
+msgstr "Éditeur de champ"
+
+#: includes/class-gfen-addon.php:324
+msgid "whole field"
+msgstr "champ entier"
+
+#: includes/class-gfen-addon.php:378
+msgid "UPPER CASE"
+msgstr "MAJUSCULES"
+
+#: includes/class-gfen-addon.php:379
+msgid "lower case"
+msgstr "minuscules"
+
+#: includes/class-gfen-addon.php:380
+msgid "First letter upper case"
+msgstr "Première lettre en majuscule"
+
+#: includes/class-gfen-addon.php:381
+msgid "First Letters Upper Case"
+msgstr "Première Lettre De Chaque Mot"
+
+#: includes/class-gfen-addon.php:382
+msgid "off"
+msgstr "désactivé"
+
+#: includes/class-gfen-addon.php:408 includes/class-gfen-addon.php:480
+msgid "Normalize"
+msgstr "Normaliser"
+
+#: includes/class-gfen-addon.php:421
+msgid "More options…"
+msgstr "Plus d’options…"
+
+#: includes/class-gfen-addon.php:481
+msgid "Automatically clean this field’s value on new submissions. For fields with sub-fields (Name, Address…), it applies to every sub-field. Existing entries are untouched — use “More options” to also fix them."
+msgstr "Nettoie automatiquement la valeur de ce champ lors des nouvelles soumissions. Pour les champs à sous-champs (Nom, Adresse…), s’applique à chaque sous-champ. Les entrées existantes ne sont pas modifiées — utilisez « Plus d’options » pour les corriger également."
+
+#: includes/class-gfen-addon.php:482
+msgid "Example: roger → ROGER"
+msgstr "Exemple : roger → ROGER"
+
+#: includes/class-gfen-addon.php:483
+msgid "Example: ROGER → roger"
+msgstr "Exemple : ROGER → roger"
+
+#: includes/class-gfen-addon.php:484
+msgid "Example: roger → Roger"
+msgstr "Exemple : roger → Roger"
+
+#: includes/class-gfen-addon.php:485
+msgid "Example: jean dupont → Jean Dupont"
+msgstr "Exemple : jean dupont → Jean Dupont"
+
+#: includes/class-gfen-addon.php:486
+msgid "No automatic normalization for this field."
+msgstr "Aucune normalisation automatique pour ce champ."

@@ -1,0 +1,32 @@
+/**
+ * Quick "Normalize" control in the field's Advanced tab (form editor).
+ *
+ * The markup mirrors Gravity Forms' own radio rows (sibling <input> +
+ * <label class="inline">), so the radios render natively with no need to
+ * override `appearance`. This file only handles vertical spacing/layout.
+ */
+.gfen-normalize-options {
+	margin-top: 8px;
+}
+
+.gfen-normalize-option {
+	display: flex;
+	align-items: center;
+	margin: 0 0 6px;
+}
+
+.gfen-normalize-option > input[type="radio"] {
+	flex: 0 0 auto;
+	margin: 0 8px 0 0;
+}
+
+.gfen-normalize-option > label.inline {
+	margin: 0;
+	cursor: pointer;
+}
+
+.gfen-more-options {
+	display: inline-block;
+	margin-top: 8px;
+	font-size: 13px;
+}

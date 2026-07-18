@@ -238,6 +238,13 @@
 	padding: 1px 8px;
 }
 
+/* Rules mirrored from a field's Advanced-tab "Normalize" control. */
+.gfen-badge--quick {
+	color: #1d4ed8;
+	background: #eef2ff;
+	border-color: #c7d2fe;
+}
+
 /* Standalone add button (shown under the list when rules exist) */
 .gfen-add-wrap {
 	margin-top: 16px;

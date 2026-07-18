@@ -2,7 +2,7 @@
 # This file is distributed under the AGPLv3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Entry Normalizer for Gravity Forms 1.0.0\n"
+"Project-Id-Version: Entry Normalizer for Gravity Forms 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-17 18:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -484,5 +484,65 @@ msgstr ""
 
 #: includes/class-github-updater.php:877
 msgid "Unable to rename the update folder. Please retry or update manually."
+msgstr ""
+
+#: includes/class-gfen-addon.php:182
+msgid "Field editor"
+msgstr ""
+
+#: includes/class-gfen-addon.php:324
+msgid "whole field"
+msgstr ""
+
+#: includes/class-gfen-addon.php:378
+msgid "UPPER CASE"
+msgstr ""
+
+#: includes/class-gfen-addon.php:379
+msgid "lower case"
+msgstr ""
+
+#: includes/class-gfen-addon.php:380
+msgid "First letter upper case"
+msgstr ""
+
+#: includes/class-gfen-addon.php:381
+msgid "First Letters Upper Case"
+msgstr ""
+
+#: includes/class-gfen-addon.php:382
+msgid "off"
+msgstr ""
+
+#: includes/class-gfen-addon.php:408 includes/class-gfen-addon.php:480
+msgid "Normalize"
+msgstr ""
+
+#: includes/class-gfen-addon.php:421
+msgid "More options…"
+msgstr ""
+
+#: includes/class-gfen-addon.php:481
+msgid "Automatically clean this field’s value on new submissions. For fields with sub-fields (Name, Address…), it applies to every sub-field. Existing entries are untouched — use “More options” to also fix them."
+msgstr ""
+
+#: includes/class-gfen-addon.php:482
+msgid "Example: roger → ROGER"
+msgstr ""
+
+#: includes/class-gfen-addon.php:483
+msgid "Example: ROGER → roger"
+msgstr ""
+
+#: includes/class-gfen-addon.php:484
+msgid "Example: roger → Roger"
+msgstr ""
+
+#: includes/class-gfen-addon.php:485
+msgid "Example: jean dupont → Jean Dupont"
+msgstr ""
+
+#: includes/class-gfen-addon.php:486
+msgid "No automatic normalization for this field."
 msgstr ""
 
